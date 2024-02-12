@@ -13,7 +13,9 @@ I have hosted the app. Check the link in the description of the repo. However, i
 <ol>
 <li>Configured a new React app using <code>create-react-app</code>.</li>
 <li>Configured Tailwind CSS into the app.</li>
+<li>Routing</li>
 <li>Created a Header Component with Netflix logo</li>
 <li>Add the banner image for login page</li>
 <li>Created Sign in/Sign up form</li>
+<li>Form Validation</li>
 </ol>

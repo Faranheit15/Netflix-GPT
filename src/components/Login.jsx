@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+import { validateForm } from "../utils/validate";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
 
   const toggleisSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
 
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = nameRef?.current?.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const message = validateForm(email, password);
+    setErrorMessage(message);
   };
 
   return (
@@ -27,25 +37,34 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
+            ref={nameRef}
             type="text"
-            placeholder="Enter Your Name"
+            placeholder="Name"
             required
+            name="name"
             className="p-4 my-4 w-full rounded-lg bg-gray-600"
           />
         )}
         <input
+          ref={emailRef}
           type="email"
-          placeholder="Enter Email Address"
+          placeholder="Email Address"
           required
+          name="email"
           className="p-4 my-4 w-full rounded-lg bg-gray-600"
         />
         <input
+          ref={passwordRef}
           type="password"
-          placeholder="Enter Password"
+          placeholder="Password"
           required
+          name="password"
+          autoComplete="off"
           className="p-4 my-4 w-full rounded-lg bg-gray-600"
         />
+        <p className="text-red-600 text-xl">{errorMessage}</p>
         <button
+          onSubmit={(e) => e.preventDefault()}
           onClick={handleSubmit}
           type="submit"
           className="p-4 my-6 bg-red-700 w-full rounded-lg"
