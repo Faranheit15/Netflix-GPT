@@ -2,7 +2,7 @@
   "name": "netflix-gpt",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Faranheit15.github.io/netflix-gpt",
+  "homepage": "https://Faranheit15.github.io/",
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",

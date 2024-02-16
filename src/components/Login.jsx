@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = nameRef?.current?.value;
+    // const name = nameRef?.current?.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const message = validateForm(email, password);
