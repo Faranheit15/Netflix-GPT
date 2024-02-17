@@ -5,11 +5,11 @@ import Browse from "@/components/Browse";
 
 const appRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/Netflix-GPT/",
     element: <Login />,
   },
   {
-    path: "/browse",
+    path: "/Netflix-GPT/browse",
     element: <Browse />,
   },
 ]);
