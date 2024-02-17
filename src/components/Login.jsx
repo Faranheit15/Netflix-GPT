@@ -32,7 +32,7 @@ const Login = () => {
           alt="banner"
         />
       </div>
-      <form className="w-3/12 absolute p-12 bg-black my-80 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+      <form className="w-3/12 absolute p-12 bg-black my-24 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
         <h1 className="text-3xl font-bold py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
