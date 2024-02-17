@@ -18,4 +18,7 @@ I have hosted the app. Check the link in the description of the repo. However, i
 <li>Add the banner image for login page</li>
 <li>Created Sign in/Sign up form</li>
 <li>Form Validation</li>
+<li>Hosting</li>
+<li>Firebase Authentication</li>
+<li>Redux Store</li>
 </ol>
