@@ -1,15 +1,33 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useState, useEffect } from "react";
 
 import { auth } from "@/http/firebase";
+import { addUser, removeUser } from "@/store/redux/userSlice";
+import { LOGO, USER_AVATAR } from "@/utils/constants";
 
 const Header = () => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+        navigate("/Netflix-GPT/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/Netflix-GPT/");
+      }
+    });
+    //unsubscribe when the component unmounts, i.e., hygiene
+    return () => unsubscribe();
+  }, []);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -22,11 +40,7 @@ const Header = () => {
   };
   return (
     <div className="absolute px-8 py-2 bg-gradient-to-b from-black w-full z-10 flex justify-between">
-      <img
-        className="w-44"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="logo"
-      />
+      <img className="w-44" src={LOGO} alt="logo" />
       {user && (
         <div className="relative">
           <button
@@ -36,7 +50,7 @@ const Header = () => {
             type="button"
           >
             <img
-              src="https://occ-0-4409-3646.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABcdk1iCbqnp0L9eChv7Q8IHGZ2WTy26xTot4zHhnhnjjBiVicIkUNo9qBqvdD49rOnefHYhJ_ghofRGnfHobQ87SzOh_J4E.png?r=a4f"
+              src={USER_AVATAR}
               alt="avatar"
               className="w-12 h-12 rounded-full cursor-pointer"
             />
