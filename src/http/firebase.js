@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "netflix-gpt-70623",
   storageBucket: "netflix-gpt-70623.appspot.com",
   messagingSenderId: "591100923561",
-  appId: "1:591100923561:web:ba0e44dea45beb776be3b8",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
   measurementId: "G-WT35CGG8TR",
 };
 
