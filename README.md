@@ -21,4 +21,11 @@ I have hosted the app. Check the link in the description of the repo. However, i
 <li>Hosting</li>
 <li>Firebase Authentication</li>
 <li>Redux Store</li>
+<li>Added user profile image</li>
+<li>Implemented Sign Out</li>
+<li>Added hardcoded values to the constants file</li>
+<li>Registered to the TMDB API and got the token details</li>
+<li>Got data from TMDB's Now Playing Movies List API</li>
+<li>Created a custom hook for fetching now playing movies and storing in the redux store using createMovieSlice</li>
+<li>Implemented the trailer functionality on the main screen</li>
 </ol>
