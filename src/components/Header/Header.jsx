@@ -8,6 +8,8 @@ import { addUser, removeUser } from "@/store/redux/userSlice";
 import { LOGO, USER_AVATAR } from "@/utils/constants";
 import { setShowGptSearch } from "@/store/redux/gptSlice";
 
+import Button from "@/components/utils/Button";
+
 const Header = () => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
@@ -47,18 +49,25 @@ const Header = () => {
       <img className="w-44" src={LOGO} alt="logo" />
       {user && (
         <div className="flex justify-end">
-          <button
+          {/* <button
             onClick={handleGptButtonClick}
             className="text-white bg-purple-700 p-2 py-0 rounded-lg mr-4"
           >
             🚀 GPT Search
-          </button>
-          <button
+          </button> */}
+          {/* <button
             onClick={handleSignOut}
             className="text-white bg-red-700 p-2 py-0 rounded-lg"
           >
             👋🏻 Sign Out
-          </button>
+          </button> */}
+          <Button btnName="GPT Search" onClick={handleGptButtonClick} />
+          <Button
+            btnName="Sign Out"
+            onClick={handleSignOut}
+            color="bg-red"
+            textColor="text-white"
+          />
         </div>
       )}
     </div>
