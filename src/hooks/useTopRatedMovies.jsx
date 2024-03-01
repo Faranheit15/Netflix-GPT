@@ -9,7 +9,7 @@ const useTopRatedMovies = () => {
 
   const getTopRated = () => {
     fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?page=1",
+      "https://api.themoviedb.org/3/movie/top_rated?page=1",
       TMDB_API_OPTIONS
     )
       .then((response) => response.json())

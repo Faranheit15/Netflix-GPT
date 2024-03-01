@@ -1,18 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { auth } from "@/http/firebase";
 import { addUser, removeUser } from "@/store/redux/userSlice";
 import { LOGO, USER_AVATAR } from "@/utils/constants";
+import { setShowGptSearch } from "@/store/redux/gptSlice";
 
 const Header = () => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -38,44 +37,28 @@ const Header = () => {
         console.log(error);
       });
   };
+
+  const handleGptButtonClick = () => {
+    dispatch(setShowGptSearch(true));
+  };
+
   return (
     <div className="absolute px-8 py-2 bg-gradient-to-b from-black w-full z-10 flex justify-between">
       <img className="w-44" src={LOGO} alt="logo" />
       {user && (
-        <div className="relative">
+        <div className="flex justify-end">
           <button
-            id="dropdownDefaultButton"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center focus:outline-none"
-            type="button"
+            onClick={handleGptButtonClick}
+            className="text-white bg-purple-700 p-2 py-0 rounded-lg mr-4"
           >
-            <img
-              src={USER_AVATAR}
-              alt="avatar"
-              className="w-12 h-12 rounded-full cursor-pointer"
-            />
+            🚀 GPT Search
           </button>
-          {isDropdownOpen && (
-            <div
-              id="dropdown"
-              className="absolute z-10 divide-y divide-gray-100 rounded-lg shadow w-44"
-            >
-              <ul
-                className="py-2 text-sm text-gray-700"
-                aria-labelledby="dropdownDefaultButton"
-              >
-                <li>
-                  <button
-                    onClick={handleSignOut}
-                    className="block px-4 py-2 bg-gray-800 hover:bg-gray-700 w-full text-left text-white"
-                    style={{ borderRadius: " 8px" }}
-                  >
-                    Sign Out
-                  </button>
-                </li>
-              </ul>
-            </div>
-          )}
+          <button
+            onClick={handleSignOut}
+            className="text-white bg-red-700 p-2 py-0 rounded-lg"
+          >
+            👋🏻 Sign Out
+          </button>
         </div>
       )}
     </div>

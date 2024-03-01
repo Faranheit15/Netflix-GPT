@@ -8,10 +8,7 @@ const usePopularMovies = () => {
   const dispatch = useDispatch();
 
   const getPopular = () => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?page=1",
-      TMDB_API_OPTIONS
-    )
+    fetch("https://api.themoviedb.org/3/movie/popular?page=1", TMDB_API_OPTIONS)
       .then((response) => response.json())
       .then((response) => {
         dispatch(addPopularMovies(response.results));
