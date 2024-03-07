@@ -14,3 +14,8 @@ export const TMDB_API_OPTIONS = {
   },
 };
 export const TMDB_IMAGE_CDN = "https://image.tmdb.org/t/p/w500/";
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hi", name: "Hindi" },
+  { identifier: "ur", name: "Urdu" },
+];
