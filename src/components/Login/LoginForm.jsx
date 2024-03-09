@@ -77,8 +77,8 @@ const LoginForm = () => {
     }
   };
   return (
-    <form className="w-3/12 absolute p-12 bg-black my-24 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
-      <h1 className="text-3xl font-bold py-4">
+    <form className="absolute left-0 right-0 w-full p-12 mx-auto my-24 text-white bg-black rounded-lg md:w-3/12 bg-opacity-80">
+      <h1 className="py-4 text-3xl font-bold">
         {isSignInForm ? "Sign In" : "Sign Up"}
       </h1>
       {!isSignInForm && (
@@ -88,7 +88,7 @@ const LoginForm = () => {
           placeholder="Name"
           required
           name="name"
-          className="p-4 my-4 w-full rounded-lg bg-gray-600"
+          className="w-full p-4 my-4 bg-gray-600 rounded-lg"
         />
       )}
       <input
@@ -97,7 +97,7 @@ const LoginForm = () => {
         placeholder="Email Address"
         required
         name="email"
-        className="p-4 my-4 w-full rounded-lg bg-gray-600"
+        className="w-full p-4 my-4 bg-gray-600 rounded-lg"
       />
       <input
         ref={passwordRef}
@@ -106,14 +106,14 @@ const LoginForm = () => {
         required
         name="password"
         autoComplete="off"
-        className="p-4 my-4 w-full rounded-lg bg-gray-600"
+        className="w-full p-4 my-4 bg-gray-600 rounded-lg"
       />
-      <p className="text-red-600 text-xl">{errorMessage}</p>
+      <p className="text-xl text-red-600">{errorMessage}</p>
       <button
         onSubmit={(e) => e.preventDefault()}
         onClick={handleSubmit}
         type="submit"
-        className="p-4 my-6 bg-red-700 w-full rounded-lg"
+        className="w-full p-4 my-6 bg-red-700 rounded-lg"
       >
         {isSignInForm ? "Sign In" : "Sign Up"}
       </button>
@@ -121,7 +121,7 @@ const LoginForm = () => {
         {isSignInForm ? "New to Netflix?" : "Already have an account?"}
         <span
           onClick={toggleIsSignInForm}
-          className="cursor-pointer text-gray-600"
+          className="text-gray-600 cursor-pointer"
         >
           {isSignInForm ? " Sign Up Now" : " Sign In"}
         </span>

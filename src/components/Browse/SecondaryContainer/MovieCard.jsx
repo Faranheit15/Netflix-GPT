@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const MovieCard = ({ posterPath, originalTitle }) => {
   return (
-    <div className="w-48 pr-4 hover:scale-110 transition-transform">
+    <div className="pr-4 transition-transform w-36 md:w-48 hover:scale-110">
       <img alt={originalTitle} src={TMDB_IMAGE_CDN + posterPath} />
     </div>
   );

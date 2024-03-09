@@ -7,6 +7,7 @@ import MainContainer from "@/components/Browse/MainContainer/MainContainer";
 import SecondaryContainer from "@/components/Browse/SecondaryContainer/SecondaryContainer";
 import GptSearch from "@/components/Browse/GPTSearch/GptSearch";
 import { useSelector } from "react-redux";
+import Footer from "@/components/Footer/Footer";
 
 const Browse = () => {
   const showGptSearch = useSelector((state) => state.gpt.showGptSearch);
@@ -27,6 +28,7 @@ const Browse = () => {
           <SecondaryContainer />
         </>
       )}
+      <Footer />
     </>
   );
 };

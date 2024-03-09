@@ -5,17 +5,19 @@ import GptMovieSuggestions from "@/components/Browse/GPTSearch/GptMovieSuggestio
 
 const GptSearch = () => {
   return (
-    <div>
-      <div className="absolute w-full h-full overflow-hidden -z-10">
+    <>
+      <div className="fixed w-full h-full overflow-hidden -z-10">
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-screen object-cover"
           src={BANNER_IMAGE}
           alt="banner"
         />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 };
 

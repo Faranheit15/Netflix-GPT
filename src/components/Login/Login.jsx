@@ -8,7 +8,7 @@ const Login = () => {
       <Header />
       <div className="absolute w-full h-full overflow-hidden">
         <img
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-screen"
           src={BANNER_IMAGE}
           alt="banner"
         />

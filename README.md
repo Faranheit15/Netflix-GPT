@@ -28,4 +28,25 @@ I have hosted the app. Check the link in the description of the repo. However, i
 <li>Got data from TMDB's Now Playing Movies List API</li>
 <li>Created a custom hook for fetching now playing movies and storing in the redux store using createMovieSlice</li>
 <li>Implemented the trailer functionality on the main screen</li>
+<li>Update Store with Trailer Video Data</li>
+<li>Embedded the Yotube video and make it autoplay and mute</li>
+<li>Tailwind Classes to make Main Container look awesome</li>
+<li>Build Secondary Component</li>
+<li>Build Movie List</li>
+<li>build Movie Card</li>
+<li>TMDB Image CDN URL</li>
+<li>Made the Browsre page amazing with Tailwind CSS</li>
+<li>usePopularMovies Custom hook</li>
+<li>GPT Search Page</li>
+<li>GPT Search Bar</li>
+<li>(BONUS) Multi-language Feature in our App)</li>
+<li>Get Open AI Api Key</li>
+<li>Gpt Search API Call</li>
+<li>fetched gptMoviesSuggestions from TMDB</li>
+<li>created gptSlice added data</li>
+<li>Resused Movie List component to make movie suggestion container</li>
+<li>Memoization</li>
+<li>Added .env file</li>
+<li>Adding .env file to gitignore</li>
+<li>Made our Site Responsive</li>
 </ol>

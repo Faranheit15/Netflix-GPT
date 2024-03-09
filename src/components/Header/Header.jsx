@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect } from "react";
 
@@ -52,10 +52,12 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black w-full z-10 flex justify-between">
-      <img className="w-44" src={LOGO} alt="logo" />
+    <div className="absolute z-10 flex flex-col justify-between w-full px-8 py-2 bg-gradient-to-b from-black md:flex-row">
+      <Link to="/Netflix-GPT/">
+        <img className="mx-auto w-44 md:mx-0" src={LOGO} alt="logo" />
+      </Link>
       {user && (
-        <div className="flex justify-end">
+        <div className="flex justify-between md:justify-end">
           {showGptSearch && (
             <Select
               options={SUPPORTED_LANGUAGES}
@@ -63,7 +65,10 @@ const Header = () => {
               defaultValue={SUPPORTED_LANGUAGES[0].name}
             />
           )}
-          <Button btnName="GPT Search" onClick={handleGptButtonClick} />
+          <Button
+            btnName={showGptSearch ? "Homepage" : "GPT Search"}
+            onClick={handleGptButtonClick}
+          />
           <Button
             btnName="Sign Out"
             onClick={handleSignOut}
