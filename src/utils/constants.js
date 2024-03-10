@@ -8,9 +8,9 @@ export const TMDB_API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: import.meta.env.VITE_TMDB_API_KEY,
-    // Authorization:
-    //   "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNGQyMjU3YTQ1MDU1NjRmOWRmMDFiZTlmM2YwNjcyOCIsInN1YiI6IjYxNzc4Zjg2ZDIzNmU2MDA5MDFhNDgwZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.24jk_EVa80szuiZ43QfAcrDcX50Cbdkp8U2BRU3Xufw",
+    // Authorization: import.meta.env.VITE_TMDB_API_KEY,
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNGQyMjU3YTQ1MDU1NjRmOWRmMDFiZTlmM2YwNjcyOCIsInN1YiI6IjYxNzc4Zjg2ZDIzNmU2MDA5MDFhNDgwZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.24jk_EVa80szuiZ43QfAcrDcX50Cbdkp8U2BRU3Xufw",
   },
 };
 export const TMDB_IMAGE_CDN = "https://image.tmdb.org/t/p/w500/";
@@ -19,6 +19,6 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hi", name: "Hindi" },
   { identifier: "ur", name: "Urdu" },
 ];
-export const OPEN_API_KEY = import.meta.env.VITE_OPEN_API_KEY;
-// export const OPEN_API_KEY =
-//   "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";
+// export const OPEN_API_KEY = import.meta.env.VITE_OPEN_API_KEY;
+export const OPEN_API_KEY =
+  "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";
