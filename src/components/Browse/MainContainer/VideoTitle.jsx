@@ -6,7 +6,7 @@ const VideoTitle = ({ title, overview }) => {
       <h1 className="text-lg font-bold md:text-6xl">{title}</h1>
       <p className="hidden w-1/4 py-6 text-lg md:inline-block">{overview}</p>
       <div className="my-4 md:my-0">
-        <button className="px-3 py-1 text-xl text-black bg-white rounded-lg opacity-100 md:px-12 md:py-4 hover:bg-opacity-40 md:opacity-0 ">
+        <button className="px-3 py-1 text-xl text-black bg-white rounded-lg opacity-100 md:px-12 md:py-4 hover:bg-opacity-40">
           <div className="flex content-center">
             <Icon icon="mdi:play" width="24" height="24" /> Play
           </div>

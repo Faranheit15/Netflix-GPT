@@ -6,7 +6,7 @@ const MovieList = ({ title, movies }) => {
   return (
     <div className="px-6">
       <h1 className="py-4 text-lg text-white md:text-3xl">{title}</h1>
-      <div className="flex overflow-x-scroll hover:overflow-scroll">
+      <div className="flex overflow-x-auto overflow-y-hidden">
         <div className="flex cursor-pointer">
           {movies.map((movie) => (
             <MovieCard
